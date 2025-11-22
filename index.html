@@ -1,9 +1,213 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Janet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            color: #b85c1b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            animation: pulse 3s infinite;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #654321;
+            font-style: italic;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .squirrel-card {
+            background-color: rgb(156, 43, 87);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .squirrel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .squirrel-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .squirrel-name {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #8b4513;
+            background-color: #fffaf0;
+        }
+        
+        .heart {
+            color: #ff6b6b;
+            display: inline-block;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Janet te amo! ❤</h1>
+    <div class="header">
+        <h1><span class="heart">❤</span> Para Janet <span class="heart">❤</span></h1>
+        <p class="subtitle">Estas ardillas son tan adorables como la que te orinó</p>
+    </div>
+    
+    <div class="gallery">
+        <!-- Ardilla 1 -->
+        <div class="squirrel-card">
+            <div class="squirrel-img">
+                <!-- En un caso real, aquí iría una imagen -->
+                <span>Imagen de ardilla 1</span>
+            </div>
+            <div class="squirrel-name">Ardilla susto de embarazo</div>
+        </div>
+        
+        <!-- Ardilla 2 -->
+        <div class="squirrel-card">
+            <div class="squirrel-img">
+                <span>Imagen de ardilla 2</span>
+            </div>
+            <div class="squirrel-name">Ardilla masoquista</div>
+        </div>
+        
+        <!-- Ardilla 3 -->
+        <div class="squirrel-card">
+            <div class="squirrel-img">
+                <span>Imagen de ardilla 3</span>
+            </div>
+            <div class="squirrel-name">Ardilla juguetona</div>
+        </div>
+        
+        <!-- Ardilla 4 -->
+        <div class="squirrel-card">
+            <div class="squirrel-img">
+                <span>Imagen de ardilla 4</span>
+            </div>
+            <div class="squirrel-name">Ardilla tesista</div>
+        </div>
+        
+        <!-- Ardilla 5 -->
+        <div class="squirrel-card">
+            <div class="squirrel-img">
+                <span>Imagen de ardilla 5</span>
+            </div>
+            <div class="squirrel-name">Ardilla no tengo cambio</div>
+        </div>
+        
+        <!-- Ardilla 6 -->
+        <div class="squirrel-card">
+            <div class="squirrel-img">
+                <span>Imagen de ardilla 6</span>
+            </div>
+            <div class="squirrel-name">Ardilla chismosa</div>
+        </div>
+    </div>
+
+    <script>
+        // Para agregar imágenes reales, reemplaza los divs con etiquetas img
+        // Por ejemplo: <img src="ruta/a/tu/imagen.jpg" alt="Ardilla" class="squirrel-img">
+        
+        // Ejemplo de cómo agregar imágenes desde Unsplash (ardillas)
+        document.addEventListener('DOMContentLoaded', function() {
+            const squirrelImages = document.querySelectorAll('.squirrel-img');
+            
+            // URLs de ejemplo de ardillas (puedes reemplazarlas con tus propias imágenes)
+            const imageUrls = [
+                'https://wallpapers.com/images/high/funny-squirrel-pictures-3io8p5eg4hb7lp8m.webp',
+                'https://i.pinimg.com/736x/9e/ba/13/9eba13b753f46804bfdfcd2a547f32eb.jpg',
+                'https://i.pinimg.com/736x/25/50/01/25500125cd649469a373e84018fc60ac.jpg',
+                'https://i.pinimg.com/736x/e2/4b/0f/e24b0fad22cfbe1313b425ee3aef1227.jpg',
+                'https://i.kym-cdn.com/entries/icons/mobile/000/055/128/disintegrating-squirrel.jpg',
+                'https://i.pinimg.com/474x/dc/4a/6f/dc4a6f9f38ad549f225bf21327363007.jpg'
+            ];
+            
+            squirrelImages.forEach((imgDiv, index) => {
+                // Crear elemento de imagen
+                const img = document.createElement('img');
+                img.src = imageUrls[index % imageUrls.length] + '?w=400&h=300&fit=crop';
+                img.alt = 'Ardilla';
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                
+                // Limpiar el contenido del div y agregar la imagen
+                imgDiv.innerHTML = '';
+                imgDiv.appendChild(img);
+            });
+        });
+    </script>
 </body>
 </html>
